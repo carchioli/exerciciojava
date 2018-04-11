@@ -1,5 +1,7 @@
 package b_intermediarios;
 
+import java.util.Random;
+
 /**
  * Crie um programa que simula o funcionamento de um caça níquel, da seguinte forma:
  * 
@@ -16,5 +18,34 @@ package b_intermediarios;
 public class CacaNiquel {
 	public static void main(String args[]) {
 		String[] valores = {"abacaxi", "framboesa", "banana", "pera", "7"};
+		
+		Random random = new Random();
+		
+		int pontos = 0;
+		
+		String[] sorteados = new String[3];
+		
+		System.out.println("INICIANDO O CAÇA NÍQUEL");
+		
+		for(int i=0;i<3;i++) {
+			sorteados[i] = valores[random.nextInt(5)];
+			System.out.println(sorteados[i]);
+		}
+		
+		if(sorteados[0].equals(sorteados[1].equals(sorteados[2]))) {
+			if(sorteados[0].equals("7")) {
+				System.out.println("5000");
+			}else {
+				System.out.println("1000");
+			}
+		}
+		
+		if(sorteados[0].equals(sorteados[1]) ||
+		   sorteados[1].equals(sorteados[2]) ||
+		   sorteados[0].equals(sorteados[2])) {
+				System.out.println("100");
+
+		}
+		
 	}
 }
